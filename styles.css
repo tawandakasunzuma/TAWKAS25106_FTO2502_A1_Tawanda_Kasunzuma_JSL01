@@ -157,13 +157,13 @@ body {
 
 /* MEDIA QUERIES */
 
-@media (min-width: 601px) and (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1024px) {
     #kanban-sections {
         grid-template-columns: repeat(2,1fr);
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     /* == Nav bar == */
     #nav-bar {
         display: none;
@@ -191,5 +191,8 @@ body {
     /* == Main Content ==*/
     #kanban-sections {
         grid-template-columns: 1fr;
+    }
+    .task-card {
+        max-width: 490px;
     }
 }

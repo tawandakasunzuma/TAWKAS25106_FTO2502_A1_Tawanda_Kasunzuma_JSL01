@@ -145,3 +145,31 @@ body {
     border-radius: 0.5rem;
     box-shadow: 0 4px 6px #364E7E1A;
 }
+
+/* MEDIA QUERIES */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    #kanban-sections {
+        grid-template-columns: repeat(2,1fr);
+    }
+    #kanban-logo {
+        max-width: 120px;
+    }
+    #launch-button {
+        width: 220px;
+        height: 38.4px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    body {
+        background-color: blue;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    body {
+        background-color: yellow;
+    }
+}
+

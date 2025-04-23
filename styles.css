@@ -5,3 +5,70 @@
     margin: 0;
     padding: 0;
 }
+
+/* Custom properties */
+
+:root {
+    /* Fonts */
+    --xl-font-size: 24px;
+    --large-font-size: 18px;
+    --medium-font-size: 15px;
+    --small-font-size: 12px;
+    /* Colors */
+    --main-purple-color:#635FC7;
+    --medium-gray-color:#828FA3;
+    --white-color: #FFFFFF;
+    --light-gray: #F4F7FD;
+    /* Margin */
+    --big-margin: 2rem;
+    --small-margin: 1rem;
+}
+
+/* Body */
+
+body {
+    display: flex;
+    min-height: 100vh;
+    font-family: "Plus Jakarta Sans",sans-serif;
+}
+
+/* Nav */
+
+#nav-bar {
+    border-right: 1px solid var(--light-gray);
+}
+
+#kanban-logo {
+    width: 150px;
+    height: auto;
+    margin:var(--big-margin);
+}
+
+#number-boards {
+    font-size: var(--small-font-size);
+    font-weight: bold;
+    letter-spacing: 2.4px;
+    color: var(--medium-gray-color);
+    margin: 0 var(--big-margin) var(--small-margin) var(--big-margin);
+}
+
+#launch-button {
+    width: 275px;
+    height: 48px;
+    border: none;
+    background-color: var(--main-purple-color);
+    color: var(--white-color);
+    font-size: var(--medium-font-size);
+    font-weight: bold;
+    text-align: center;
+    margin-right: var(--big-margin);
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+    cursor: pointer;
+}
+
+/* Main Content */
+
+#main-content {
+    width: 100%;
+}

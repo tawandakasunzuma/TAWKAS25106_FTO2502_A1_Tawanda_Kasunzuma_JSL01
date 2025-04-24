@@ -10,28 +10,29 @@
 
 :root {
     /* Fonts */
-    --xl-font-size: 24px;
-    --large-font-size: 18px;
-    --medium-font-size: 15px;
-    --small-font-size: 12px;
+    --font-size-xl: 24px;
+    --font-size-lg: 18px;
+    --font-size-md: 15px;
+    --font-size-sm: 12px;
     /* Colors */
-    --main-purple-color:#635FC7;
-    --medium-gray-color:#828FA3;
-    --white-color: #FFFFFF;
-    --light-gray-color: #F4F7FD;
-    --black-color: #000112;
+    --color-main-purple:#635FC7;
+    --color-medium-gray:#828FA3;
+    --color-light-gray: #F4F7FD;
+    --color-white: #FFFFFF;
+    --color-black: #000112;
     /* Margin */
-    --big-margin: 2rem;
-    --medium-margin: 1.5rem;
-    --small-margin: 1rem;
+    --margin-lg: 2rem;
+    --margin-md: 1.5rem;
+    --margin-sm: 1rem;
     /* Padding */
-    --big-padding: 2rem;
-    --medium-padding: 1.5rem;
-    --small-padding: 1.25rem;
+    --padding-lg: 2rem;
+    --padding-md: 1.5rem;
+    --padding-sm: 1.25rem;
     /* Gaps */
-    --big-gap: 1.5rem;
-    --medium-gap: 1.25rem;
-    --small-gap: 0.75rem;
+    --gap-xl: 1.5rem;
+    --gap-lg: 1.25rem;
+    --gap-md: 1rem;
+    --gap-sm: 0.75rem;
 }
 
 /* == Body == */
@@ -39,46 +40,46 @@
 body {
     display: flex;
     font-family: "Plus Jakarta Sans",sans-serif;
-    color: var(--black-color);
+    color: var(--color-black);
+    min-height: 85vh;
 }
 
-/* == Nav == */
+/* == Navigation Sidebar == */
 
 #nav-bar {
-    border-right: 1px solid var(--light-gray-color);
+    border-right: 1px solid var(--color-light-gray);
 }
 
 #kanban-logo {
     max-width: 150px;
     height: auto;
-    margin:var(--big-margin);
+    margin:var(--margin-lg);
 }
 
 #number-boards,
 .column-title {
-    font-size: var(--small-font-size);
+    font-size: var(--font-size-sm);
     font-weight: bold;
-    color: var(--medium-gray-color);
+    color: var(--color-medium-gray);
     letter-spacing: 2.4px;
 }
 
 #number-boards {
-    margin: 0 var(--big-margin) var(--small-margin) var(--big-margin);
+    margin: 0 var(--margin-lg) var(--margin-sm) var(--margin-lg);
 }
 
 #launch-button {
-    width: 275px;
     width: clamp(175px, 25vw, 275px);
     height: 48px;
-    background-color: var(--main-purple-color);
-    color: var(--white-color);
-    font-size: var(--medium-font-size);
+    background-color: var(--color-main-purple);
+    color: var(--color-white);
+    font-size: var(--font-size-md);
     font-weight: bold;
     text-align: center;
     border: none;
     border-top-right-radius: 100px;
     border-bottom-right-radius: 100px;
-    margin-right: var(--big-margin);
+    margin-right: var(--margin-lg);
     cursor: pointer;
 }
 
@@ -95,32 +96,32 @@ body {
 }
 
 #header {
-    border-bottom: 1px solid var(--light-gray-color);
-    padding: var(--big-padding) var(--medium-padding);
+    border-bottom: 1px solid var(--color-light-gray);
+    padding: var(--padding-lg) var(--padding-md);
 }
 
 #header-title {
-    font-size: var(--xl-font-size);
+    font-size: var(--font-size-xl);
     font-weight: bold;
 }
 
 /* Kanban */
 
 #kanban-board {
-    background-color: var(--light-gray-color);
+    background-color: var(--color-light-gray);
     height: 100%;
 }
 
 #kanban-sections {
-    padding: var(--medium-padding);
+    padding: var(--padding-md);
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    gap: var(--big-gap);
+    gap: var(--gap-xl);
 }
 
 .section-header {
     display: flex;
-    gap: var(--small-gap);
+    gap: var(--gap-sm);
 }
 
 .circle-icon {
@@ -140,19 +141,20 @@ body {
 }
 
 .items-list {
-    margin-top: var(--medium-margin);
+    margin-top: var(--margin-md);
     display: flex;
     flex-direction: column;
-    gap: var(--medium-gap);
+    gap: var(--gap-lg);
 }
 
 .task-card {
-    font-size: var(--medium-font-size);
+    font-size: var(--font-size-md);
     font-weight: bold;
-    padding: var(--small-padding);
-    background-color: var(--white-color);
+    padding: var(--padding-sm);
+    background-color: var(--color-white);
     border-radius: 0.5rem;
     box-shadow: 0 4px 6px #364E7E1A;
+    cursor: pointer;
 }
 
 /* MEDIA QUERIES */
@@ -164,24 +166,21 @@ body {
 }
 
 @media (max-width: 768px) {
-    /* == Nav bar == */
+    /* == Navigation Sidebar == */
     #nav-bar {
         display: none;
     }
-    #launch-button {
-        width: 275px;
-    }
     /* == Header == */
     #header {
-        padding: var(--small-padding);
+        padding: var(--padding-sm);
     }
-    #header div {
+    #mobile-header-container {
         display: flex;
         align-items: center;
-        gap: 1rem;
+        gap: var(--gap-md);
     }
     #header-title {
-        font-size: var(--large-font-size);
+        font-size: var(--font-size-lg);
     }
     #kanban-hamburger {
         display: block;
@@ -193,6 +192,6 @@ body {
         grid-template-columns: 1fr;
     }
     .task-card {
-        max-width: 490px;
+        max-width: 475px;
     }
 }

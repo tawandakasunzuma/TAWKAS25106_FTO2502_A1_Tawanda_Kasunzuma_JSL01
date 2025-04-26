@@ -194,6 +194,7 @@ body {
         display: block;
         width: 24px;
         height: auto;
+        cursor: pointer;
     }
     /* == Main Content ==*/
     #kanban-sections {
